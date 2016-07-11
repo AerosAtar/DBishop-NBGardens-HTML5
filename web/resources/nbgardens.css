@@ -1,0 +1,54 @@
+html, body, h1, h2, h3, h4, h5, h6 { font-family: "Roboto", sans-serif }
+
+/*
+body { color: #000 !important;
+		background: -webkit-linear-gradient(top,#5c1e7b 25%, #dda0dd 75%)}
+*/
+
+/*Wrapper for page wrapper to ensure correct display on very large screens*/
+#header-wrapper, #body-wrapper, #footer-wrapper { width:100%; max-width:1024px; margin:auto; }
+
+/*Product Listing CSS*/
+img.nb-product-image { width: 100%; }
+.w3-card-2 {min-height: 700px} /*Workaround for issues with card heights - needs to be addressed properly */
+
+/*Navbar CSS*/
+.w3-sidenav a, .w3-sidenav h4 { padding: 12px; }
+.w3-navbar a { padding-top: 12px !important; padding-bottom: 12px !important; }
+
+/*Breadcrumb CSS*/
+/*.breadcrumb { 
+ 	font-size: 0.8em;
+ 	color: #000;
+ 	background-color: #FFCF29;
+ 	border: 1px #00009C solid;
+ 	padding: 0.5em;
+}*/
+
+/*FAQ Specific CSS*/
+.nb-faq-row { vertical-align: top; height:auto !important; }
+.nb-faq-list {display:none; }
+.nb-faq-show {display:none; }
+.nb-faq-hide:target + .nb-faq-show {display:inline; }
+.nb-faq-hide:target {display:none; }
+.nb-faq-hide:target ~ .nb-faq-list {display:inline; }
+@media print { .nb-faq-hide, .nb-faq-show { display:none; } }
+
+/*Registration Form Specific CSS*/
+.nb-register-form { margin-left:15px; margin-bottom:10px; }
+.nb-register-input { float: left; }
+.nb-register-td { width:50%; text-align:right; }
+.nb-register-form { margin-bottom:15px; }
+.nb-register-form h4 { text-align:center; }
+
+/*Basket specific CSS*/
+#order-header{border-bottom: 1px solid black;}	
+#order-footer{border-top: 1px solid black;}
+.basket{padding:10px;}	
+.orderline td{border-bottom: 1px solid grey;}
+.quantity{width:50px;}
+.price{width: 100px;}
+
+/*Carousel specific CSS*/
+.slides1 .slides2 {display:none}
+.nb-tag {height:15px;width:15px;padding:0;margin-top:6px}
