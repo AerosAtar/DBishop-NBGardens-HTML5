@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-	<title>NB Gardens</title>
+	<title>Search Results</title>
 
 	<!--  Metadata -->
 	<meta charset="UTF-8">
@@ -29,38 +29,41 @@
 	<![endif]-->
 </head>
 <body>
-	<header id="header-wrapper" class="w3-navbar w3-theme w3-top w3-left-align w3-large nb-fixed-top">
+	<header id="main-navbar" class="w3-navbar w3-theme w3-top w3-left-align w3-large nb-fixed-top">
  		<div id="navbar">
-			<div id="nav-belt">
-				<div id="nav-left" class="w3-col s2">
-					<div id="nav-logo">
-						<a href="#"><img src="img/Logo.png" alt="NBGardens.com"/></a>
-					</div>
+			<div id="nav-left" class="w3-col s2">
+				<div id="nav-logo">
+					<a href="#"><img src="img/Logo.png" alt="NBGardens.com"/></a>
 				</div>
-				<div id="nav-search" class="w3-col s8">
-					<form action="search.html">
-						<div id="nb-search-icon" class="w3-right">
-							<i class="fa fa-search fa-2x"></i>
-						</div>
+			</div>
+			<div id="nav-search" class="w3-col s8">
+				<form action="search.html">
+<!-- 					<div id="nb-search-icon" class="w3-right">
+						<i class="fa fa-search fa-2x"></i>
+					</div> -->
+					<div id="nb-search-input">
 						<input id="tipue_search_input" name="q" class="w3-border w3-padding-left w3-padding-right" type="text" placeholder="Search Catalogue" autocomplete="off" required />
-					</form>
+					</div>
+				</form>
+			</div>
+			<div id="nav-right" class="w3-col s2">
+				<div id="nav-login" class="w3-right">
+					<a href="#"><i class="fa fa-user fa-2x"></i></a>
 				</div>
-				<div id="nav-spacer" class="w3-col s1">&nbsp;</div>
-				<div id="nav-right" class="w3-col s1">
-					<div id="nav-login"  class="w3-opennav">
-						<a href="#"><img src="img/login.png" alt="Login" style="height:35px" /></a>
-					</div>
-					<div id="nav-basket" class="w3-opennav">
-						<a href="#"><img src="img/empty-cart-light.png" alt="Basket" style="height:35px" /></a>
-					</div>
+				<div id="nav-basket" class="w3-right">
+					<a href="#"><i class="fa fa-shopping-cart fa-2x"></i>
+					<span style="color:#ff0000; z-index:10; position: relative; left:-22px; top:-15px;"><b><script>itemsinbasket()</script></b></span></a>
 				</div>
 			</div>
 		</div>
-		<div id="breadcrumbs"> 
+	</header>
+	<header id="breadcrumbs-navbar">
+		<div id="breadcrumbs" class="w3-theme-l3">
+			<script>breadcrumbs()</script>
 		</div>
 	</header>
 	
-	<main id="body-wrapper">
+	<main id="main-body">
 		<form action="search.html">
 			<input type="text" name="q" id="tipue_search_input" autocomplete="off" required>
 		</form>
@@ -70,9 +73,26 @@
 		</div>
 	</main>
 	
-	<footer id="footer-wrapper">
+	<footer id="main-footer" class="w3-main nb-fixed-bottom">
+		<div class="w3-container w3-theme-l2 w3-xlarge w3-right">
+			<a href="#" class="w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
+			<a href="#" class="w3-hover-text-red w3-show-inline-block"><i class="fa fa-google-plus"></i></a>
+			<a href="#" class="w3-hover-text-red w3-show-inline-block"><i class="fa fa-pinterest-p"></i></a>
+			<a href="#" class="w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
+			<a href="#" class="w3-hover-text-grey w3-show-inline-block"><i class="fa fa-flickr"></i></a>
+		</div>
+		<div class="w3-container w3-theme-l1">
+			<ul class="w3-navbar">
+				<li><a href="">FAQ's</a></li>
+				<li><a href="">Help</a></li>
+				<li><a href="">Contact Us</a></li>
+				<li><a href="">Refunds and Returns Policy</a></li>
+				<li><a href="">Terms and Conditions</a></li>
+				<li><a href="">Accessibility Policy</a></li>
+			</ul>
+		</div>
 	</footer>
-	
+
 	<script>
 		$(document).ready(function() {
    			$('#tipue_search_input').tipuesearch();
