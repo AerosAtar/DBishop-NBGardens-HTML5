@@ -1,7 +1,7 @@
 <div class="w3-col s2 w3-padding-top">
 	<div class="w3-card-2 w3-hover-shadow" style="height:300px;">
 		<section id="product-image">
-			<img src="img/product/XXX.jpg" alt="XXX" class="w3-hover-opacity nb-product-image" />
+			<a href="XXX.html"><img src="img/product/XXX.jpg" alt="XXX" class="w3-hover-opacity nb-product-image" /></a>
 		</section>
 	</div>
 </div>
