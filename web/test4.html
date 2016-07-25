@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<title>Test Product 4</title>
+
+	<!--  Metadata -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Styling -->
+	<link rel="stylesheet" href="resources/w3.css">
+	<link rel="stylesheet" href="resources/w3-theme.css">
+	<link rel="stylesheet" href="resources/tipuesearch.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400">
+	<link rel="stylesheet" type="text/css" href="resources/nbgardens.css" />
+	
+	<!-- Scripting -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/tipuesearch_content.js"></script>
+	<script type="text/javascript" src="resources/tipuesearch_set.js"></script>
+	<script type="text/javascript" src="resources/tipuesearch.min.js"></script>
+	<script type="text/javascript" src="resources/nbgardens.js"></script>
+	
+	<!-- Browser Fixes -->
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header id="main-navbar" class="w3-navbar w3-theme w3-top w3-left-align w3-large nb-fixed-top">
+ 		<div id="navbar">
+			<div id="nav-left" class="w3-col s2">
+				<div id="nav-logo">
+					<a href="#"><img src="img/Logo.png" alt="NBGardens.com"/></a>
+				</div>
+			</div>
+			<div id="nav-search" class="w3-col s8">
+				<form action="search.html">
+<!-- 					<div id="nb-search-icon" class="w3-right">
+						<i class="fa fa-search fa-2x"></i>
+					</div>
+-->					<div id="nb-search-input">
+						<input id="tipue_search_input" name="q" class="w3-border w3-padding-left w3-padding-right" type="text" placeholder="Search Catalogue" autocomplete="off" required />
+					</div>
+				</form>
+			</div>
+			<div id="nav-right" class="w3-col s2">
+				<div id="nav-login" class="w3-right">
+					<a href="#"><i class="fa fa-user fa-2x" alt="Login"></i></a>
+				</div>
+				<div id="nav-basket" class="w3-right">
+					<a href="#">
+						<i class="fa fa-shopping-cart fa-2x"></i>
+						<span class="items-in-basket">
+<!--							<b><script>itemsinbasket()</script></b>
+--><!-- Placeholder -->		<b>0</b>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<header id="breadcrumbs-navbar">
+		<div id="breadcrumbs" class="w3-theme-l3">
+			<script>breadcrumbs()</script>
+		</div>
+	</header>
+	
+	<main id="main-body">
+		<section id="product-page-images" class="w3-container w3-col s3">
+			<div id="slideshow-images" class="w3-content" style="max-width: 800px; position: relative">
+				<img class="mySlides" src="img/product/test4.jpg" style="width:100%;">
+
+<!-- If more than one product image
+				<img class="mySlides" src="img/product/XXX-1.jpg" style="width:100%;">
+
+				<a class="w3-btn-floating" style="position:absolute;top:45%;left:0" onclick="plusDivs(-1)">❮</a>
+				<a class="w3-btn-floating" style="position:absolute;top:45%;right:0" onclick="plusDivs(1)">❯</a>
+-->
+				<script>
+					var slideIndex = 1;
+					showDivs(slideIndex);
+				</script>
+			</div>
+		</section>
+		<section id="product-page-right-column" class="w3-container w3-col s9 w3-padding">
+			<section id="control-buttons" class="w3-container w3-right w3-card w3-pale-green w3-round-large w3-padding">
+				<label for="quantity">Quantity:</label>
+				<select id="quantity" name="quantity">
+					<option value="1" selected="">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+				<br/><br/>
+				<a class="w3-btn w3-green" style="width: 100%" onclick="addToBasket(product, quantity)">Add to Basket</a>
+				<br class="w3-margin-bottom"/>
+				<a class="w3-btn w3-green w3-opacity" style="width: 100%" onclick="addToWishlist(test1)">Add to Wish List</a>
+			</section>
+			<section id="product-name" class="w3-border-bottom" style="margin-right: 200px;">
+				<h2>Mushroom Gnome</h2>
+				by Gnomes4U
+			</section>
+			<section id="product-pricing" class="w3-padding-top">
+				<table id="price-table">
+					<tr>
+						<td class="label w3-opacity">RRP:</td>
+						<td class="price w3-opacity"><s>£00.00</s></td>
+					</tr>
+					<tr>
+						<td class="label w3-opacity">Price:</td>
+						<td class="price"><b class="w3-text-red w3-large">£00.00</b></td>
+					</tr>
+					<tr>
+						<td class="label w3-opacity">You Save:</td>
+						<td class="price w3-text-red">£00.00 (00%)</td>
+					</tr>
+				</table>
+				<br/>
+<!-- Multi-select if different versions of same product
+				<input type="radio" name="product" value="test1" checked="checked"/> Red Clothing<br/>
+				<input type="radio" name="product" value="test1-1" /> Blue Clothing<br/>
+-->
+				<p class="w3-xlarge w3-text-green">In Stock</p>
+			</section>
+			<section id="product-summary">
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Etiam ultricies libero eget augue luctus ultrices.</li>
+					<li>Morbi tincidunt aliquam nunc nec rutrum.</li>
+					<li>Nullam quis dolor massa. Maecenas sem augue, venenatis ullamcorper urna sit amet, viverra finibus lorem.</li>
+					<li>Sed feugiat mauris sit amet magna luctus porta quis ac ante.</li>
+				</ul>
+			</section>
+		</section>
+		<section id="product-page-details" class="w3-container w3-col s12">
+			<section id="product-details">
+				<h3>Product Details</h3>
+					<p><b>Product Dimensions:</b> XX x YY x ZZ cm</p>
+					<p><b>Product Weight:</b> AAA g</p>
+					<p><b>Boxed-product Weight:</b> BBB g</p>
+					<p><b>Product Material:</b> Poly-resin</p>
+					<p><b>Item model number:</b> test4</p>
+			</section>
+			<section id="product-description">
+				<h3>Product Description</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque massa eget libero condimentum scelerisque. Etiam vitae tellus ex. Nunc sed sem eget turpis tempor scelerisque. Maecenas vulputate lobortis libero, ut egestas tellus imperdiet at. Sed maximus aliquam urna, eu rhoncus erat. In vitae vehicula ex, vel aliquet magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus viverra erat nec urna condimentum, id euismod leo hendrerit. Praesent lacinia scelerisque neque, in rutrum eros tempus nec. Suspendisse varius mauris id mauris eleifend, in sodales tellus mattis. Maecenas varius dolor hendrerit eros mollis faucibus.</p>
+				<p>Maecenas vel massa turpis. Sed ac nibh eget nibh consectetur suscipit. Aliquam mattis rutrum ante ut gravida. Praesent porta, eros nec placerat pulvinar, quam lectus ultricies leo, et congue dolor sem ut ex. Cras sed ullamcorper nunc. Phasellus in eros convallis, ultricies lectus quis, dapibus urna. Nulla lacus erat, gravida ut dapibus ut, dapibus a orci.</p>
+				<p>Morbi turpis quam, malesuada sit amet feugiat sit amet, pharetra eget sem. Praesent eget porttitor purus. Fusce justo nibh, rhoncus quis malesuada id, ultricies in lectus. In tincidunt mauris neque, non cursus odio posuere eget. Nam vel pellentesque eros. Morbi ultricies elit auctor tincidunt laoreet. Nam lacinia ligula et neque viverra finibus. Vestibulum nec malesuada ex, ut sodales dui. Sed luctus consectetur sollicitudin. Integer vestibulum eros tortor, congue egestas dui molestie ut. Aliquam id nibh quis quam consequat feugiat ac facilisis mauris. Nam gravida libero dictum felis efficitur maximus.</p> 
+				<br/><br/>
+			</section>
+		</section>
+	</main>
+
+	<footer id="main-footer" class="w3-main nb-fixed-bottom">
+		<div class="w3-container w3-theme-l2 w3-xlarge w3-right">
+			<a href="#" class="w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
+			<a href="#" class="w3-hover-text-red w3-show-inline-block"><i class="fa fa-google-plus"></i></a>
+			<a href="#" class="w3-hover-text-red w3-show-inline-block"><i class="fa fa-pinterest-p"></i></a>
+			<a href="#" class="w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
+			<a href="#" class="w3-hover-text-grey w3-show-inline-block"><i class="fa fa-flickr"></i></a>
+		</div>
+		<div class="w3-container w3-theme-l1">
+			<ul class="w3-navbar">
+				<li><a href="">FAQ's</a></li>
+				<li><a href="">Help</a></li>
+				<li><a href="">Contact Us</a></li>
+				<li><a href="">Refunds and Returns Policy</a></li>
+				<li><a href="">Terms and Conditions</a></li>
+				<li><a href="">Accessibility Policy</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

@@ -8,18 +8,22 @@ body { color: #000 !important;
 /*Wrapper to ensure correct display on very large screens*/
 header , body , footer { width: 100%; margin: auto; }
 
+#main-body { margin-bottom: 50px !important; }
+
 /*Positioning fixes for various core elements */
-#breadcrumbs-navbar { margin-top: 50px; }
+#breadcrumbs-navbar { margin-top: 50px; z-index: 10; }
 .nb-fixed-top { position: fixed; top: 0; }
 .nb-fixed-bottom { position: fixed; bottom: 0; }
 
 /*Navbar CSS*/
+#main-navbar { z-index: 10; }
 .w3-sidenav a, .w3-sidenav h4 { padding: 12px; }
 .w3-navbar a { padding-top: 12px !important; padding-bottom: 12px !important; }
 #nav-left, #nav-right, #nav-search { display: inline-block; padding: 5px; }
 #nav-login, #nav-basket { display: inline-block; padding: 5px 20px 5px 5px;}
 #tipue_search_input { display: inline-block; border-radius: 5px 5px 5px 5px; width: 100%; height: 45px; }
 #nb-search-icon { display: inline-block; border: 1px solid grey; background-color: grey; border-radius: 0px 5px 5px 0px; width: 10%; height: 45px; text-align: center; }
+.items-in-basket { color:#000000; z-index:12; position: relative; left:-22px; top:-15px; }
 
 /*Breadcrumb CSS*/
 .breadcrumb { 
@@ -31,7 +35,7 @@ header , body , footer { width: 100%; margin: auto; }
 }
 
 /*Product Listing CSS*/
-img.nb-product-image { width: 100%; max-height:300px;}
+img.nb-product-image { width: 100%; max-height:300px; }
 
 /*Registration Form Specific CSS*/
 .nb-register-form { margin-left:15px; margin-bottom:10px; }
@@ -47,3 +51,14 @@ img.nb-product-image { width: 100%; max-height:300px;}
 .orderline td{border-bottom: 1px solid grey;}
 .quantity{width:50px;}
 .price{width: 100px;}
+
+/*Product Page CSS*/
+.myslides { max-height: 365px; }
+
+#price-table { width: 200px; }
+td.label { text-align: right; }
+td.price { padding: 0px 0px 0px 5px;}
+
+#product-details p { margin-left: 20px; }
+
+#product-description p { margin-left: 50px; }
