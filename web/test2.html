@@ -162,7 +162,7 @@
 		var productID
 		for (var i = 0; i < document.getElementsByTagName("INPUT").length; i++)
 		{
-			if(document.getElementsByTagName("INPUT")[i].id == "product-selector" && document.getElementsByTagName("INPUT")[i].checked == true)
+			if(document.getElementsByTagName("INPUT")[i].id === "product-selector" && document.getElementsByTagName("INPUT")[i].checked === true)
 			{
 				productID = document.getElementsByTagName("INPUT")[i].value;
 			}
