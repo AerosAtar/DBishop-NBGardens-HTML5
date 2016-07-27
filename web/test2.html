@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="resources/nbgardens.css" />
 	
 	<!-- Scripting -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/jquery-3.1.0.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch_content.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch_set.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch.min.js"></script>
@@ -120,9 +120,12 @@
 					</tr>
 				</table>
 				<br/>
+				
+				<input type="radio" id="product-selector" value="test2" checked="checked" hidden="true"/>
+
 <!-- Multi-select if different versions of same product
-				<input type="radio" name="product" value="test1" checked="checked"/> Red Clothing<br/>
-				<input type="radio" name="product" value="test1-1" /> Blue Clothing<br/>
+				<input type="radio" id="product-selector" value="test1" checked="checked"/> Red Clothing<br/>
+				<input type="radio" id="product-selector" value="test1-1" /> Blue Clothing<br/>
 -->
 				<p class="w3-xlarge w3-text-green">In Stock</p>
 			</section>
@@ -155,6 +158,19 @@
 		</section>
 	</main>
 
+	<script type="text/javascript">
+		var productID
+		for (var i = 0; i < document.getElementsByTagName("INPUT").length; i++)
+		{
+			if(document.getElementsByTagName("INPUT")[i].id == "product-selector" && document.getElementsByTagName("INPUT")[i].checked == true)
+			{
+				productID = document.getElementsByTagName("INPUT")[i].value;
+			}
+
+			alert(productID);
+		}
+	</script>
+	
 	<footer id="main-footer" class="w3-main nb-fixed-bottom">
 		<div class="w3-container w3-theme-l2 w3-xlarge w3-right">
 			<a href="#" class="w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
