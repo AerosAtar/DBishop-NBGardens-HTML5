@@ -22,7 +22,8 @@
 	<script type="text/javascript" src="resources/tipuesearch_set.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch.min.js"></script>
 	<script type="text/javascript" src="resources/nbgardens.js"></script>
-	
+	<script type="text/javascript">var list; if (checkCookie("wishlist") === false) { list = new Array(); } else { list = [getCookie("wishlist")]; }</script>
+					
 	<!-- Browser Fixes -->
 	<!--[if lt IE 9]>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -94,9 +95,9 @@
 					<option value="5">5</option>
 				</select>
 				<br/><br/>
-				<a class="w3-btn w3-green" style="width: 100%" onclick="addToBasket(product, quantity)">Add to Basket</a>
+				<a class="w3-btn w3-green" style="width: 100%" onclick="addToBasket()">Add to Basket</a>
 				<br class="w3-margin-bottom"/>
-				<a class="w3-btn w3-green w3-opacity" style="width: 100%" onclick="addToWishlist(test1)">Add to Wish List</a>
+				<a class="w3-btn w3-green w3-opacity" style="width: 100%" onclick="addToWishlist(list)">Add to Wish List</a>
 			</section>
 			<section id="product-name" class="w3-border-bottom" style="margin-right: 200px;">
 				<h2>Standing Gnome with Fishing Rod</h2>
@@ -118,8 +119,10 @@
 					</tr>
 				</table>
 				<br/>
-				<input type="radio" id="product-selector" value="test1" checked="checked"/> Red Clothing<br/>
-				<input type="radio" id="product-selector" value="test1-1" /> Blue Clothing<br/>
+				<form>
+					<input type="radio" name="product-selector" value="test1" checked /> Red Clothing<br/>
+					<input type="radio" name="product-selector" value="test1-1" /> Blue Clothing<br/>
+				</form>
 				<p class="w3-xlarge w3-text-green">In Stock</p>
 			</section>
 			<section id="product-summary">

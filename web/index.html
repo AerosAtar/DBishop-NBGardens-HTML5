@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="resources/tipuesearch_set.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch.min.js"></script>
 	<script type="text/javascript" src="resources/nbgardens.js"></script>
+	<script type="text/javascript">var loggedIn = checkCookie("username");</script>
 	
 	<!-- Browser Fixes -->
 	<!--[if lt IE 9]>
@@ -48,7 +49,7 @@
 			</div>
 			<div id="nav-right" class="w3-col s2">
 				<div id="nav-login" class="w3-right">
-					<a href="#"><i class="fa fa-user fa-2x" alt="Login"></i></a>
+					<i class="fa fa-user fa-2x" alt="Login" onclick="login(loggedIn)"></i>
 				</div>
 				<div id="nav-basket" class="w3-right">
 					<a href="#">

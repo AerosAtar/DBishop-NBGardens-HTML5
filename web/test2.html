@@ -96,9 +96,9 @@
 					<option value="5">5</option>
 				</select>
 				<br/><br/>
-				<a class="w3-btn w3-green" style="width: 100%" onclick="addToBasket(product, quantity)">Add to Basket</a>
+				<a class="w3-btn w3-green" style="width: 100%" onclick="addToBasket()">Add to Basket</a>
 				<br class="w3-margin-bottom"/>
-				<a class="w3-btn w3-green w3-opacity" style="width: 100%" onclick="addToWishlist(test1)">Add to Wish List</a>
+				<a class="w3-btn w3-green w3-opacity" style="width: 100%" onclick="addToWishlist()">Add to Wish List</a>
 			</section>
 			<section id="product-name" class="w3-border-bottom" style="margin-right: 200px;">
 				<h2>Gnome Sitting On Pumpkin</h2>
@@ -121,7 +121,7 @@
 				</table>
 				<br/>
 				
-				<input type="radio" id="product-selector" value="test2" checked="checked" hidden="true"/>
+				<input type="radio" name="product-selector" value="test2" checked hidden="true"/>
 
 <!-- Multi-select if different versions of same product
 				<input type="radio" id="product-selector" value="test1" checked="checked"/> Red Clothing<br/>
@@ -157,19 +157,6 @@
 			</section>
 		</section>
 	</main>
-
-	<script type="text/javascript">
-		var productID
-		for (var i = 0; i < document.getElementsByTagName("INPUT").length; i++)
-		{
-			if(document.getElementsByTagName("INPUT")[i].id === "product-selector" && document.getElementsByTagName("INPUT")[i].checked === true)
-			{
-				productID = document.getElementsByTagName("INPUT")[i].value;
-			}
-
-			alert(productID);
-		}
-	</script>
 	
 	<footer id="main-footer" class="w3-main nb-fixed-bottom">
 		<div class="w3-container w3-theme-l2 w3-xlarge w3-right">

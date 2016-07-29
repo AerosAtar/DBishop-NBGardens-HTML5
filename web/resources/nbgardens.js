@@ -48,3 +48,67 @@ function showDivs(n) {
   }
   x[slideIndex-1].style.display = "block";  
 }
+
+/* Create a cookie */
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+}
+
+/* Get a cookie */
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
+}
+
+/* Check for a cookie */
+function checkCookie(name) {
+	var cookieName = getCookie(name);
+	if (cookieName != "") {
+//		alert("Cookie Found!"); //DEBUG
+		return true;
+	} else {
+//		alert("Cookie Not Found!"); //DEBUG
+		return false;
+	}
+}
+
+/* Create user session cookie */
+function login(LoggedIn) {
+	if (loggedIn === false) {
+		username = prompt("Please enter your username:", "");
+		if (username != "" && username != null) {
+			setCookie("username", username, 14);
+		}
+	}
+	alert("Logged in as " + getCookie("username")); //DEBUG
+}
+
+/* Wishlist */
+function addToWishlist(list) {
+	var productID;
+		
+	for (var i = 0; i < document.getElementsByTagName("INPUT").length; i++)
+	{
+		if(document.getElementsByTagName("INPUT")[i].name === "product-selector" && document.getElementsByTagName("INPUT")[i].checked === true)
+		{
+			productID = document.getElementsByTagName("INPUT")[i].value;
+			list.push(productID);
+			setCookie("wishlist", list.toString(), 1825)
+			alert("'" + productID + "' added to wishlist.\nWishlist contents now: " + list.toString()); //DEBUG
+		}
+	}
+	return list;
+}
