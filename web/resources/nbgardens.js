@@ -49,6 +49,16 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
 }
 
+/* Open dropdown menu on click */
+function openWishlist() {
+	var x = document.getElementById("wishlist");
+	if (x.className.indexOf("w3-show") == -1) {
+		x.className += " w3-show";
+	} else {
+		x.className = x.className.replace(" w3-show", "");
+	}
+}
+
 /* Create a cookie */
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -93,7 +103,8 @@ function login(LoggedIn) {
 			setCookie("username", username, 14);
 		}
 	}
-	alert("Logged in as " + getCookie("username")); //DEBUG
+	//alert("Logged in as " + getCookie("username")); //DEBUG
+	location.reload(true);
 }
 
 /* Wishlist */
@@ -106,9 +117,61 @@ function addToWishlist(list) {
 		{
 			productID = document.getElementsByTagName("INPUT")[i].value;
 			list.push(productID);
-			setCookie("wishlist", list.toString(), 1825)
+			setCookie("wishlist", list.toString(), 1825);
 			alert("'" + productID + "' added to wishlist.\nWishlist contents now: " + list.toString()); //DEBUG
 		}
 	}
+	location.reload(true);
 	return list;
+}
+
+function removeFromWishlist(position) {
+	list = getCookie("wishlist").split(",");
+	list.splice(position,1);
+	setCookie("wishlist", list.toString(), 1825);
+	location.reload(true);
+}
+
+function displayWishlist() {
+	var list = [];
+	
+	if (checkCookie("wishlist")) {
+		list = getCookie("wishlist").split(",");
+		for (var i = 0; i < list.length; i++) {
+			if (list[i].indexOf("-") != -1) { 
+				list[i] = {id: list[i], link: list[i].slice(0,list[i].indexOf("-"))}
+			} else {
+				list[i] = {id: list[i], link: list[i]}
+			}
+		}
+	}
+
+	if (list[0] == null) {
+		document.getElementById("wishlist").innerHTML = 
+			document.getElementById("wishlist").innerHTML + "Your wishlist contains no items";
+	} else {
+		for (var j = 0; j < list.length; j++) {
+			var link = document.createElement("A");
+				link.className = "nb-wishlist-link w3-border-bottom";
+				link.href = list[j].link + ".html";
+			var div1 = document.createElement("DIV");
+				div1.className = "nb-wishlist-img";
+			var img = document.createElement("IMG");
+				img.className = "nb-wishlist-thumb";
+				img.src = "img/product/" + list[j].id + ".jpg";
+			var div2 = document.createElement("DIV");
+				div2.className ="nb-wishlist-name";
+				div2.innerHTML = list[j].id;
+			var del = document.createElement("DIV");
+				del.className = "nb-wishlist-remove";
+				del.setAttribute("onclick", "removeFromWishlist(" + j.toString() + ")");
+				del.innerHTML = '<i class="fa fa-times fa-lg w3-opacity" aria-hidden="true"></i>';
+			
+				document.getElementById("wishlist").appendChild(link);
+				link.appendChild(div1);
+				div1.appendChild(img);
+				link.appendChild(div2);
+				document.getElementById("wishlist").appendChild(del);
+		}
+	}
 }

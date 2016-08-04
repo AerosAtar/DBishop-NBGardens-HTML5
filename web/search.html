@@ -22,6 +22,8 @@
 	<script type="text/javascript" src="resources/tipuesearch_set.js"></script>
 	<script type="text/javascript" src="resources/tipuesearch.min.js"></script>
 	<script type="text/javascript" src="resources/nbgardens.js"></script>
+	<script type="text/javascript">var loggedIn = checkCookie("username");</script>
+	<script type="text/javascript">var list; if (checkCookie("wishlist") === false) { list = new Array(); } else { list = [getCookie("wishlist")]; }</script>
 	
 	<!-- Browser Fixes -->
 	<!--[if lt IE 9]>
@@ -48,18 +50,19 @@
 			</div>
 			<div id="nav-right" class="w3-col s2">
 				<div id="nav-login" class="w3-right">
-					<a href="#"><i class="fa fa-user fa-2x" alt="Login"></i></a>
+					<i class="fa fa-user fa-2x" alt="Login" onclick="login(loggedIn)"></i>
 				</div>
 				<div id="nav-basket" class="w3-right">
-					<a href="#">
-						<i class="fa fa-shopping-cart fa-2x"></i>
-						<span class="items-in-basket">
+					<i class="fa fa-shopping-cart fa-2x" onclick="openWishlist()"></i>
+ 						<span class="items-in-basket" onclick="openWishlist()">
 <!--							<b><script>itemsinbasket()</script></b>
 --><!-- Placeholder -->		<b>0</b>
 						</span>
-					</a>
 				</div>
 			</div>
+		<div id="wishlist" class="w3-dropdown-content w3-card">
+			<script type="text/javascript">displayWishlist();</script>
+		</div>
 		</div>
 	</header>
 	<header id="breadcrumbs-navbar">
